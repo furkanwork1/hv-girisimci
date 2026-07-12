@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Girişimci Vizesi | Başvuru ve Danışmanlık</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFFFF;
+    --cream-2:#F4F5F8;
+    --panel:#FFFFFF;
+    --ink:#141B2E;
+    --ink-soft:#6A6E7C;
+    --line:rgba(20,27,46,0.12);
+    --blue:#1E4FD8;
+    --blue-dark:#15379F;
+    --gold:#D9A441;
+    --coral:#D64550;
+    --teal:#12907A;
+    --lavender:#8C7AE6;
+    --green:#1D9C68;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:12px;
+    --shadow-soft:0 20px 45px -25px rgba(20,27,46,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-0.02em;margin:0;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);font-weight:500;display:inline-flex;align-items:center;gap:8px;}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue);display:inline-block;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  button{font-family:inherit;cursor:pointer;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;letter-spacing:.01em;border:1.5px solid transparent;transition:background-color .18s ease, color .18s ease, border-color .18s ease, opacity .18s ease;white-space:nowrap;}
+  .btn .arrow{display:inline-block;transition:transform .18s ease;font-size:14px;}
+  .btn:hover .arrow{transform:translateX(3px);}
+  .btn-primary{background:var(--blue);color:#fff;}
+  .btn-primary:hover{background:var(--blue-dark);}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+  .btn-ghost:hover{background:var(--cream-2);border-color:var(--ink);}
+  .btn-dark{background:var(--ink);color:#fff;}
+  .btn-dark:hover{background:#000;}
+  .btn-sm{padding:9px 17px;font-size:13px;}
+  .btn-block{width:100%;}
+  .btn[disabled]{opacity:.4;cursor:not-allowed;}
+  .btn-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1.5px solid var(--line);background:transparent;color:var(--ink-soft);flex-shrink:0;}
+  .btn-icon:hover{border-color:var(--ink);color:var(--ink);background:var(--cream-2);}
+
+  header{position:fixed;top:16px;left:16px;right:16px;z-index:50;background:linear-gradient(120deg,var(--blue),var(--blue-dark));border-radius:24px;overflow:hidden;box-shadow:0 20px 40px -18px rgba(21,55,159,0.5);}
+  header .hdr-decor{position:absolute;z-index:0;pointer-events:none;}
+  nav{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;}
+  .logo{display:flex;align-items:center;gap:9px;font-family:'Space Grotesk';font-weight:700;font-size:18.5px;color:#fff;}
+  .logo .mark{width:32px;height:32px;flex-shrink:0;}
+  .nav-links{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:rgba(255,255,255,.82);}
+  .nav-links a{display:flex;align-items:center;gap:7px;padding:9px 13px;border-radius:999px;transition:background-color .18s ease, color .18s ease;}
+  .nav-links a svg{width:16px;height:16px;flex-shrink:0;opacity:.9;}
+  .nav-links a:hover{color:#fff;background:rgba(255,255,255,.14);}
+  .nav-right{display:flex;align-items:center;gap:10px;}
+  header .btn-icon{border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.9);}
+  header .btn-icon:hover{background:rgba(255,255,255,.16);border-color:#fff;color:#fff;}
+  header .btn-primary{background:#fff;color:var(--blue);}
+  header .btn-primary:hover{background:#F0F1FF;}
+  .nav-burger{display:none;background:none;border:1.5px solid rgba(255,255,255,.35);border-radius:50%;width:40px;height:40px;padding:0;align-items:center;justify-content:center;}
+  .nav-burger span{display:block;width:16px;height:1.6px;background:#fff;margin:2.5px auto;border-radius:2px;transition:transform .2s ease, opacity .2s ease;}
+  .nav-burger.open span:nth-child(1){transform:translateY(4.2px) rotate(45deg);}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-4.2px) rotate(-45deg);}
+
+  .hero{position:relative;padding:180px 0 90px;overflow:hidden;}
+  .hero-shape{position:absolute;z-index:0;}
+  .shape-diamond{top:96px;right:8%;width:68px;opacity:.9;}
+  .shape-circle{bottom:40px;left:4%;width:120px;opacity:.9;}
+  .shape-pill{top:280px;right:1%;width:150px;opacity:.5;}
+  .hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto;text-align:center;}
+  h1.hero-h{font-size:clamp(32px,5vw,52px);line-height:1.08;}
+  h1.hero-h .accent{color:var(--blue);}
+  .hero-sub{max-width:560px;margin:20px auto 32px;font-size:17px;line-height:1.6;color:var(--ink-soft);}
+  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  .finder{margin-top:64px;position:relative;z-index:2;width:100vw;margin-left:calc(-50vw + 50%);padding:0 24px;}
+  .finder-head{max-width:620px;margin:0 auto 28px;text-align:center;}
+  .finder-head h2{font-size:25px;margin-top:10px;line-height:1.25;}
+  .finder-head p{color:var(--ink-soft);font-size:15px;margin-top:8px;}
+
+  .finder-canvas-wrap{max-width:1320px;margin:0 auto;}
+  .finder-canvas-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding:0 4px;}
+  .fc-hint{font-size:13px;color:var(--ink-soft);font-weight:600;}
+  .fc-reset{display:none;align-items:center;gap:5px;background:none;border:none;font-size:13px;font-weight:700;color:var(--blue);cursor:pointer;padding:0;}
+  .fc-reset.visible{display:inline-flex;}
+
+  .flow-canvas{
+    position:relative;overflow-x:auto;overflow-y:auto;
+    background:
+      radial-gradient(circle, rgba(20,27,46,.12) 1px, transparent 1.2px) 0 0/18px 18px,
+      #fff;
+    border:1px solid var(--line);border-radius:var(--radius-lg);
+    box-shadow:0 1px 2px rgba(20,27,46,0.04), 0 34px 60px -32px rgba(20,27,46,0.24);
+    padding:72px 84px;
+  }
+  .flow-track{position:relative;width:max-content;}
+  .flow-svg{position:absolute;top:0;left:0;pointer-events:none;overflow:visible;}
+  .flow-cols{display:flex;align-items:center;gap:96px;position:relative;z-index:2;min-height:480px;}
+  .flow-col{display:flex;flex-direction:column;align-items:center;}
+  .flow-col-label{font-weight:700;font-size:14.5px;text-align:center;margin-bottom:18px;max-width:250px;line-height:1.4;color:var(--ink);}
+  .flow-col-nodes{display:flex;flex-direction:column;gap:22px;}
+
+  .flow-root{
+    width:70px;height:70px;border-radius:50%;background:var(--blue);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;
+    box-shadow:0 12px 26px -10px rgba(30,79,216,.55);position:relative;cursor:pointer;
+    transition:transform .18s ease;
+  }
+  .flow-root:hover{transform:scale(1.06);}
+  .flow-root-label{font-size:12.5px;font-weight:700;color:var(--blue);text-align:center;margin-top:14px;max-width:100px;}
+
+  .flow-node{
+    width:260px;background:#fff;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;
+    position:relative;cursor:pointer;flex-shrink:0;animation:nodePop .32s ease;
+    transition:border-color .18s ease, box-shadow .18s ease, opacity .18s ease, transform .18s ease;
+  }
+  .flow-node:hover{border-color:var(--blue);transform:translateY(-2px);}
+  .flow-node .fn-thumb{height:72px;display:flex;align-items:center;justify-content:center;font-size:30px;}
+  .flow-node .fn-foot{padding:16px 18px;font-size:14.5px;font-weight:700;line-height:1.4;color:var(--ink);}
+  .flow-node.chosen{border-color:var(--blue);box-shadow:0 0 0 3px rgba(30,79,216,.14);}
+  .flow-node.dimmed{opacity:.38;}
+  .flow-node.dimmed:hover{border-color:var(--line);transform:none;}
+
+  .flow-node.result-node{width:290px;cursor:default;animation:nodePop .38s ease;}
+  .flow-node.result-node:hover{transform:none;border-color:var(--line);}
+  .flow-node.result-node .fn-thumb{height:70px;background:var(--cream-2);}
+  .flow-node.result-node .fn-thumb .flag-badge{width:64px;height:44px;border-radius:9px;overflow:hidden;border:1px solid var(--line);box-shadow:0 1px 2px rgba(20,27,46,.1);}
+  .flow-node.result-node .fn-thumb .flag-badge svg{display:block;width:100%;height:100%;}
+  .flow-node.result-node .fn-tag{font-family:'IBM Plex Mono';font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);font-weight:600;padding:12px 14px 0;}
+  .flow-node.result-node .fn-country{font-size:11px;color:var(--ink-soft);font-weight:600;padding:2px 14px 0;text-transform:uppercase;letter-spacing:.04em;}
+  .flow-node.result-node .fn-name{padding:4px 14px 8px;font-family:'Space Grotesk';font-size:16.5px;font-weight:700;}
+  .flow-node.result-node .fn-tags{display:flex;flex-wrap:wrap;gap:5px;padding:0 14px 14px;}
+  .flow-node.result-node .fn-cta{display:flex;flex-direction:column;gap:8px;padding:0 14px 16px;}
+  .flow-node.result-node .fn-cta .btn{width:100%;}
+
+  @keyframes nodePop{from{opacity:0;transform:translateY(8px) scale(.95);}to{opacity:1;transform:translateY(0) scale(1);}}
+
+  .fn-dot{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:var(--blue);border:2px solid #fff;transform:translateY(-50%);box-shadow:0 0 0 2px rgba(30,79,216,.16);z-index:3;}
+  .fn-dot.left{left:-6.5px;}
+  .fn-dot.right{right:-6.5px;}
+  .flow-root .fn-dot.right{right:-5px;}
+
+  .section-head{max-width:640px;margin:0 auto 52px;text-align:center;}
+  .section-head h2{font-size:clamp(26px,3.4vw,38px);margin-top:14px;line-height:1.15;}
+  .section-head p{color:var(--ink-soft);font-size:16px;margin-top:14px;line-height:1.6;}
+
+  .visas{padding:100px 0;background:var(--cream-2);}
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .visa-card{
+    position:relative;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:0 0 24px;
+    display:flex;flex-direction:column;
+    overflow:hidden;
+    box-shadow:0 1px 2px rgba(20,27,46,0.04), 0 14px 30px -24px rgba(20,27,46,0.18);
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .visa-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-soft);border-color:transparent;}
+  .visa-flagbar{height:9px;width:100%;}
+  .visa-body{padding:24px 24px 0;display:flex;flex-direction:column;flex:1;}
+  .visa-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
+  .visa-flag{
+    width:50px;height:34px;border-radius:8px;overflow:hidden;
+    flex-shrink:0;border:1px solid var(--line);box-shadow:0 1px 2px rgba(20,27,46,.08);
+  }
+  .visa-flag svg{display:block;width:100%;height:100%;}
+  .visa-titles h3{font-size:17px;line-height:1.25;margin-bottom:3px;}
+  .visa-titles .visa-country{font-size:12px;font-weight:600;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;}
+  .visa-tagline{font-family:'Space Grotesk';font-weight:600;font-size:14.5px;margin-bottom:10px;line-height:1.3;}
+  .visa-benefit{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px;}
+  .visa-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+  .visa-tag{font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:999px;white-space:nowrap;letter-spacing:.01em;}
+  .visa-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin-bottom:20px;padding:16px;background:var(--cream-2);border-radius:var(--radius-sm);}
+  .visa-stat{display:flex;align-items:center;gap:9px;}
+  .visa-stat .icon{font-size:15px;width:26px;height:26px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .visa-stat .k{font-size:10.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1px;}
+  .visa-stat .v{font-size:13.5px;font-weight:700;line-height:1.2;}
+  .visa-actions{display:flex;gap:8px;margin-top:auto;}
+  .visa-actions .btn{flex:1;padding:11px 10px;font-size:13px;}
+
+  .steps{padding:120px 0;}
+  .steps-layout{display:grid;grid-template-columns:210px 1fr;gap:56px;align-items:start;}
+  .steps-nav{position:sticky;top:110px;display:flex;flex-direction:column;gap:10px;}
+  .step-tab{text-align:left;background:#fff;border:1px solid var(--line);border-radius:999px;padding:14px 20px;font-weight:600;font-size:14.5px;color:var(--ink-soft);transition:all .2s ease;}
+  .step-tab.active{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:var(--shadow-soft);}
+  .step-panels{display:flex;flex-direction:column;gap:130px;}
+  .step-panel{scroll-margin-top:120px;}
+  .panel-tag{display:inline-block;font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:var(--cream-2);border-radius:999px;padding:6px 14px;margin-bottom:16px;font-weight:500;}
+  .panel-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:26px;}
+  .panel-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:24px;box-shadow:0 1px 2px rgba(20,27,46,0.04), 0 14px 30px -24px rgba(20,27,46,0.22);}
+  .panel-card h3{font-size:18px;margin-bottom:10px;line-height:1.25;}
+  .panel-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0;}
+  .panel-mock{border-radius:var(--radius-lg);padding:40px;position:relative;min-height:240px;display:flex;align-items:flex-end;}
+  .mock-card{background:#fff;border-radius:var(--radius-md);padding:24px;width:100%;max-width:420px;box-shadow:var(--shadow-soft);}
+  .mock-card .mock-label{font-size:12px;color:var(--ink-soft);font-weight:600;margin-bottom:12px;}
+  .mock-card .mock-chip{display:inline-block;font-weight:700;font-size:14px;padding:4px 10px;border-radius:6px;margin-bottom:10px;}
+  .mock-card h4{font-family:'Space Grotesk';font-size:19px;margin:0 0 8px;}
+  .mock-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 18px;}
+  .mock-btn{display:inline-block;width:100%;text-align:center;padding:12px;border-radius:12px;font-weight:700;font-size:14px;}
+
+  .faq{padding:100px 0;background:var(--cream-2);}
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;}
+  .faq-q{width:100%;background:none;border:none;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15.5px;text-align:left;}
+  .faq-q .plus{font-family:'Space Grotesk';font-size:20px;color:var(--blue);transition:transform .2s ease;flex-shrink:0;margin-left:14px;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{padding:0 24px 20px;margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.65;}
+
+  .cta{position:relative;background:var(--blue);color:#fff;padding:100px 32px;overflow:hidden;border-radius:36px;max-width:1180px;margin:40px auto 0;}
+  .cta-inner{position:relative;z-index:2;text-align:center;max-width:640px;margin:0 auto;}
+  .cta h2{font-size:clamp(28px,4.2vw,42px);line-height:1.12;color:#fff;}
+  .cta .accent{color:var(--gold);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px;}
+  .cta p{color:rgba(255,255,255,0.78);margin:16px 0 30px;font-size:16px;}
+  .cta-decor{position:absolute;z-index:1;}
+  .cta .btn-ghost{background:#fff;color:var(--blue);border:none;}
+  .cta .btn-ghost:hover{background:#F2F2F2;border-color:transparent;}
+  .cta-services{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px;max-width:900px;margin-left:auto;margin-right:auto;}
+  .cta-service{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:var(--radius-md);padding:18px;text-align:center;font-size:13.5px;font-weight:600;}
+  .cta-service span{display:block;font-size:22px;margin-bottom:8px;}
+
+  .demo-section{padding:110px 0 60px;}
+  .demo-card{display:grid;grid-template-columns:1fr 1.1fr;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);}
+  .demo-left{background:linear-gradient(160deg,var(--blue),var(--blue-dark));color:#fff;padding:52px 44px;display:flex;flex-direction:column;justify-content:center;}
+  .demo-left .eyebrow{color:var(--gold);}
+  .demo-left .eyebrow::before{background:var(--gold);}
+  .demo-left h2{font-size:clamp(24px,3vw,32px);color:#fff;margin:16px 0 14px;line-height:1.15;}
+  .demo-left p{color:rgba(255,255,255,.78);font-size:15px;line-height:1.6;margin-bottom:26px;}
+  .demo-bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;}
+  .demo-bullets li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;font-weight:600;}
+  .demo-bullets li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:6px;flex-shrink:0;}
+  .demo-right{padding:44px;}
+  .progress-track{height:5px;border-radius:6px;background:var(--line);margin-bottom:24px;overflow:hidden;}
+  .progress-fill{height:100%;width:38%;background:linear-gradient(90deg,var(--blue),var(--lavender));border-radius:6px;}
+  .demo-month{font-family:'Space Grotesk';font-size:20px;margin-bottom:18px;}
+  .day-grid,.time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .time-grid{margin-top:10px;margin-bottom:20px;}
+  .pick-btn{padding:13px 6px;border-radius:12px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:13.5px;transition:all .18s ease;}
+  .pick-btn:hover{border-color:var(--blue);}
+  .pick-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .field-label{font-weight:600;font-size:14px;margin-bottom:8px;display:block;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .field-input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);font-family:inherit;font-size:14.5px;margin-bottom:20px;background:var(--cream-2);}
+  .field-input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .field-error{font-size:13px;color:var(--coral);margin:-12px 0 16px;display:none;font-weight:600;}
+  .demo-success{display:none;text-align:center;padding:26px 10px;}
+  .demo-success .check{width:52px;height:52px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+  .demo-success h3{font-family:'Space Grotesk';font-size:20px;margin-bottom:10px;}
+  .demo-success p{color:var(--ink-soft);font-size:14.5px;line-height:1.6;}
+
+  footer{padding:70px 32px 40px;background:var(--cream-2);}
+  .footer-top{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:40px;border-bottom:1px solid var(--line);}
+  .footer-brand .logo{margin-bottom:14px;color:var(--ink);}
+  .footer-brand p{font-size:14px;color:var(--ink-soft);line-height:1.6;max-width:320px;}
+  .footer-col h4{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:16px;font-weight:600;}
+  .footer-col a{display:block;font-size:14.5px;margin-bottom:12px;color:var(--ink);}
+  .footer-col a:hover{color:var(--blue);}
+  .footer-offices{font-size:13.5px;color:var(--ink-soft);line-height:1.7;margin-top:14px;}
+  .footer-bottom{max-width:1180px;margin:24px auto 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .footer-copy{font-size:13.5px;color:var(--ink-soft);}
+  .social{display:flex;gap:10px;}
+  .social a{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink-soft);transition:all .2s ease;font-size:13px;font-weight:700;}
+  .social a:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+  @media(max-width:900px){
+    .card-grid{grid-template-columns:repeat(2,1fr);}
+    .finder{padding:0 20px;}
+    .flow-canvas{padding:36px 26px;}
+    .flow-cols{gap:56px;min-height:400px;}
+    .steps-layout{grid-template-columns:1fr;}
+    .steps-nav{position:static;flex-direction:row;flex-wrap:wrap;}
+    .panel-cards{grid-template-columns:1fr;}
+    .demo-card{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .nav-burger{display:flex;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .cta-services{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:560px){
+    .card-grid{grid-template-columns:1fr;}
+    .day-grid,.time-grid{grid-template-columns:repeat(2,1fr);}
+    .field-row{grid-template-columns:1fr;}
+    .wrap{padding:0 20px;}
+    .cta{padding:70px 22px;border-radius:24px;}
+    .hero{padding-top:150px;}
+    .footer-top{grid-template-columns:1fr;}
+    .visa-stats{grid-template-columns:1fr 1fr;}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
+
+  /* Projeye özel ortak görünüm */
+  header{background:#fff;border:1px solid rgba(20,27,46,.08);box-shadow:0 16px 38px -24px rgba(20,27,46,.38);overflow:visible;}
+  header .hdr-decor{display:none;}
+  .logo{color:var(--ink);width:110px;height:38px;overflow:hidden;position:relative;flex-shrink:0;}
+  .logo img{position:absolute;width:169px;max-width:none;height:auto;left:-32px;top:-32px;border-radius:0;background:transparent;padding:0;}
+  .nav-links{color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--blue);background:var(--cream-2);}
+  header .btn-icon{border-color:var(--line);color:var(--ink-soft);}
+  header .btn-icon:hover{background:var(--cream-2);border-color:var(--blue);color:var(--blue);}
+  header .btn-primary{background:var(--blue);color:#fff;}
+  header .btn-primary:hover{background:var(--blue-dark);}
+  .nav-burger{border-color:var(--line);}
+  .nav-burger span{background:var(--ink);}
+  .hero{margin:104px 26px 0;padding:118px 0 92px;border-radius:42px;background:linear-gradient(135deg,#2855d9 0%,#1e4fd8 68%,#173fb8 100%);color:#fff;}
+  .hero .hero-inner{max-width:920px;text-align:center;}
+  .hero .eyebrow{color:rgba(255,255,255,.72);}
+  .hero .eyebrow::before{background:var(--gold);}
+  .hero .hero-h{color:#fff;font-size:clamp(40px,6vw,72px);line-height:1.04;}
+  .hero .hero-h .accent{color:var(--gold);text-decoration-color:var(--gold);}
+  .hero .hero-sub{color:rgba(255,255,255,.82);max-width:760px;}
+  .hero .btn-primary{background:#fff;color:var(--blue);}
+  .hero .btn-primary:hover{background:#f4f6ff;}
+  .hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.45);}
+  .hero .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;}
+  .shape-circle,.shape-pill{display:none;}
+  .finder-section{padding:72px 0 30px;background:#fff;}
+  .finder-section .finder{margin-top:0;background:#fff;color:var(--ink);text-align:left;}
+  footer.minimal-footer{max-width:1180px;margin:0 auto;padding:30px 32px 38px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px;color:var(--ink-soft);font-size:13px;}
+  .minimal-footer .footer-logo{display:block;width:122px;height:48px;overflow:hidden;position:relative;flex-shrink:0;}
+  .minimal-footer .footer-logo img{position:absolute;width:188px;max-width:none;height:auto;left:-35px;top:-33px;}
+  .minimal-footer .footer-links{display:flex;gap:18px;flex-wrap:wrap;}
+  .minimal-footer a:hover{color:var(--blue);}
+  @media(max-width:700px){.hero{margin:88px 12px 0;padding:78px 0 58px;border-radius:28px}.hero-shape{opacity:.45}.finder-section{padding-top:48px}.logo{width:100px}.logo img{width:154px;left:-29px;top:-29px}footer.minimal-footer{flex-direction:column;text-align:center}.minimal-footer .footer-links{justify-content:center}}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="hdr-decor" style="top:-14px;right:6%;width:52px;opacity:.9;" viewBox="0 0 100 100"><path d="M50 4l46 46-46 46L4 50z" fill="#17AE9E"/></svg>
+  <nav>
+    <a href="#top" class="logo">
+      <img src="logo.png" alt="Girişimci Vizesi logosu">
+    </a>
+    <div class="nav-links">
+      <a href="#visalar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="8.6" stroke-width="1.6"/><path d="M15.6 8.4l-2.1 5.3-5.3 2.1 2.1-5.3z" fill="currentColor" stroke="none"/></svg>
+        Girişimci Vizeleri
+      </a>
+      <a href="#steps">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h2M4 12h2M4 18h2"/><path d="M9 6h11M9 12h11M9 18h11"/></svg>
+        Nasıl Çalışır
+      </a>
+      <a href="#faq">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="8.6" stroke-width="1.6"/><path d="M9.6 9.6c.3-1.4 1.5-2.2 2.9-2.1 1.5.1 2.5 1.2 2.4 2.5-.1 1.2-1 1.7-1.8 2.2-.6.4-1 .8-1 1.6" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="16.6" r="0.9" fill="currentColor" stroke="none"/></svg>
+        Sık Sorulanlar
+      </a>
+      <a href="gorusme.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4.5 5h15v10.2H9.8L5 19V5z"/></svg>
+        İletişim
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="https://wa.me/18508808008" class="btn-icon" aria-label="WhatsApp ile ulaş">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 4.5h3.2l1.6 4-2 1.4a9 9 0 004.3 4.3l1.4-2 4 1.6v3.2c0 1-.8 1.5-1.7 1.4C10 17.6 5.9 13.5 5.1 6.7 5 5.8 5.5 5 6.5 4.5z"/></svg>
+      </a>
+      <a href="gorusme.html" class="btn btn-primary btn-sm">Teklif Al<span class="arrow">→</span></a>
+    </div>
+    <button class="nav-burger" aria-label="Menü" id="burgerBtn"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <svg class="hero-shape shape-diamond" viewBox="0 0 100 100"><path d="M50 4l46 46-46 46L4 50z" fill="var(--teal)"/></svg>
+    <svg class="hero-shape shape-circle" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="var(--gold)"/></svg>
+    <svg class="hero-shape shape-pill" viewBox="0 0 140 90"><rect x="0" y="0" width="140" height="90" rx="45" fill="var(--lavender)"/></svg>
+
+    <div class="wrap hero-inner">
+      <span class="eyebrow">Girişimci Vizesi Danışmanlığı</span>
+      <h1 class="hero-h" style="margin-top:16px;">Yurt dışı <span class="accent">hayalini</span> başlatmanın en kolay yolu!</h1>
+      <p class="hero-sub">Vize işlemleri için gereksiz evraklar ve başvuru süreciyle yorulma — Girişimci Vizesi senin için halleder.</p>
+      <div class="hero-cta">
+        <a href="gorusme.html" class="btn btn-primary">Teklif Al<span class="arrow">→</span></a>
+        <a href="#visalar" class="btn btn-ghost">Tüm Girişimci Vizeleri</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="finder-section">
+    <div class="wrap">
+      <div class="finder">
+        <div class="finder-head">
+          <span class="eyebrow">Vize Bulucu</span>
+          <h2>Size en uygun girişimci vizesi programını birlikte belirleyelim</h2>
+          <p>Aşağıdaki adımları takip ederek ihtiyacınıza uygun bir öneri oluşturabilirsiniz.</p>
+        </div>
+        <div class="finder-canvas-wrap">
+          <div class="finder-canvas-bar">
+            <span class="fc-hint">Bir seçenek belirleyin, süreç bir sonraki adıma ilerlesin</span>
+            <button type="button" class="fc-reset" id="finderResetBtn">↺ Yeniden Başlat</button>
+          </div>
+          <div class="flow-canvas" id="flowCanvas">
+            <div class="flow-track" id="flowTrack">
+              <svg class="flow-svg" id="flowSvg"></svg>
+              <div class="flow-cols" id="flowCols"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GİRİŞİMCİ VİZELERİ — 3x3 detaylı kartlar ============ -->
+  <section class="visas" id="visalar">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Girişimci Vizesi</span>
+        <h2>Hangi ülkeden girişimci vizesi almak istersin?</h2>
+        <p>Her ülkenin yatırım tutarı, iş planı, inovasyon kriterleri ve oturum şartları farklılık gösterir. Aşağıda her programın öne çıkan avantajını, kapsamını ve süresini tek bakışta karşılaştır.</p>
+      </div>
+      <div class="card-grid" id="visaGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ STICKY STEPS ============ -->
+  <section class="steps" id="steps">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Nasıl Çalışır</span>
+        <h2>Talepten oturum iznine 3 adımda</h2>
+      </div>
+
+      <div class="steps-layout">
+        <div class="steps-nav" id="stepsNav">
+          <button class="step-tab active" data-target="panel-talep">Talep Oluştur</button>
+          <button class="step-tab" data-target="panel-teklif">Teklifi Değerlendir</button>
+          <button class="step-tab" data-target="panel-surec">Süreç Başlasın</button>
+        </div>
+
+        <div class="step-panels">
+
+          <div class="step-panel" id="panel-talep">
+            <span class="panel-tag" style="background:#E4EBFD;color:#1E4FD8;">Talep Oluştur</span>
+            <h2 style="font-size:28px;margin-bottom:24px;">Saniyeler içinde talebini oluştur</h2>
+            <div class="panel-cards">
+              <div class="panel-card">
+                <h3>Hedefini seç</h3>
+                <p>Ülke ve vize türünü birkaç tıkla belirle — Slovakya'dan Amerika'ya kadar tüm seçenekler tek yerde.</p>
+              </div>
+              <div class="panel-card">
+                <h3>Bilgilerini paylaş</h3>
+                <p>Kısa bir formu doldur, ekibimiz talebini inceleyip sana özel teklifini hazırlasın.</p>
+              </div>
+            </div>
+            <div class="panel-mock" style="background:var(--lavender);">
+              <div class="mock-card">
+                <div class="mock-label">Talep Formu</div>
+                <span class="mock-chip" style="background:#E4EBFD;color:#1E4FD8;">Talep Oluştur</span>
+                <h4>Hedef ülke ve vize türü seç</h4>
+                <p>İhtiyacın olan vize için saniyeler içinde talebini oluştur, teklifin sana gelsin.</p>
+                <span class="mock-btn" style="background:#1E4FD8;color:#fff;">İlerle →</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-panel" id="panel-teklif">
+            <span class="panel-tag" style="background:#FFF3D9;color:#946200;">Teklifi Değerlendir</span>
+            <h2 style="font-size:28px;margin-bottom:24px;">En uygun teklifi karşılaştır</h2>
+            <div class="panel-cards">
+              <div class="panel-card">
+                <h3>Teklifleri karşılaştır</h3>
+                <p>Fiyat, süre ve kapsamı yan yana gör; hangi ülkenin sana daha avantajlı olduğuna kolayca karar ver.</p>
+              </div>
+              <div class="panel-card">
+                <h3>Uzmanla görüş</h3>
+                <p>Sorularını ücretsiz online danışmanlık ile netleştir, adımları birlikte planla.</p>
+              </div>
+            </div>
+            <div class="panel-mock" style="background:var(--gold);">
+              <div class="mock-card">
+                <div class="mock-label">Teklif</div>
+                <span class="mock-chip" style="background:#FFF3D9;color:#946200;">Teklifi Değerlendir</span>
+                <h4>Sana özel hazırlanan teklif</h4>
+                <p>Talebine göre hazırlanmış en uygun ve en avantajlı teklifi değerlendir.</p>
+                <span class="mock-btn" style="background:#946200;color:#fff;">Teklifi Onayla</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-panel" id="panel-surec">
+            <span class="panel-tag" style="background:#E4F8F2;color:#0E7B6E;">Süreç Başlasın</span>
+            <h2 style="font-size:28px;margin-bottom:24px;">Başvuru sürecini başlat</h2>
+            <div class="panel-cards">
+              <div class="panel-card">
+                <h3>Evraklarını hazırla</h3>
+                <p>Ekibimiz adım adım seni yönlendirir; gereksiz evrak ve yorucu süreçlerle uğraşmazsın.</p>
+              </div>
+              <div class="panel-card">
+                <h3>Başvurunu takip et</h3>
+                <p>Sürecin her aşamasını tek ekrandan izle, mülakat ve teslim tarihlerini kaçırma.</p>
+              </div>
+            </div>
+            <div class="panel-mock" style="background:var(--teal);">
+              <div class="mock-card">
+                <div class="mock-label">Süreç</div>
+                <span class="mock-chip" style="background:#E4F8F2;color:#0E7B6E;">Süreç Başlasın</span>
+                <h4>Bingo!</h4>
+                <p>Sana özel benzersiz teklif ile, vize başvuru sürecini başlat.</p>
+                <span class="mock-btn" style="background:#0E7B6E;color:#fff;">Süreci Başlat</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Sık Sorulan Sorular</span>
+        <h2>Girişimci Vizesi hakkında merak edilenler</h2>
+      </div>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <div class="wrap">
+    <section class="cta">
+      <svg class="cta-decor" style="top:-30px;right:8%;width:90px;" viewBox="0 0 100 100"><path d="M50 4l46 46-46 46L4 50z" fill="var(--teal)"/></svg>
+      <svg class="cta-decor" style="bottom:-40px;left:2%;width:130px;" viewBox="0 0 140 90"><circle cx="45" cy="45" r="42" fill="var(--gold)"/></svg>
+      <svg class="cta-decor" style="bottom:-10px;right:2%;width:170px;" viewBox="0 0 180 100"><rect x="0" y="0" width="180" height="90" rx="45" fill="var(--lavender)" opacity=".5"/></svg>
+      <div class="cta-inner">
+        <h2>Yurt dışı <span class="accent">hayalini</span> başlatmanın en kolay yolu!</h2>
+        <p>Vize işlemleri için gereksiz evraklar ve başvuru süreciyle yorulma — Girişimci Vizesi senin için halleder.</p>
+        <div class="cta-btns" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <a href="gorusme.html" class="btn btn-ghost">Teklif Al<span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="cta-services">
+        <div class="cta-service"><span>🛂</span>Vize ve Oturum İşlemleri</div>
+        <div class="cta-service"><span>🏢</span>Şirket Kuruluşu ve Muhasebe</div>
+        <div class="cta-service"><span>💬</span>Ücretsiz Online Danışmanlık</div>
+        <div class="cta-service"><span>📱</span>WhatsApp Destek Hattı</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ RANDEVU / DANIŞMANLIK ============ -->
+  <section class="demo-section" id="demo">
+    <div class="wrap">
+      <div class="demo-card">
+        <div class="demo-left">
+          <span class="eyebrow">Sizi Arayalım</span>
+          <h2>Ücretsiz Danışmanlık Randevusu Al</h2>
+          <p>Bir zaman seç, size özel en uygun girişimci vizesi seçeneklerini birlikte değerlendirelim.</p>
+          <ul class="demo-bullets">
+            <li>Sana özel vize önerisi</li>
+            <li>Süreç ve maliyet netliği</li>
+            <li>Uzman ekiple birebir görüşme</li>
+          </ul>
+        </div>
+        <div class="demo-right">
+          <div id="bookingForm">
+            <div class="progress-track"><div class="progress-fill"></div></div>
+            <div class="demo-month" id="demoMonth">Ağustos 2026</div>
+            <div class="day-grid" id="dayGrid"></div>
+            <div class="time-grid" id="timeGrid"></div>
+            <label class="field-label" for="fullName">Ad Soyad</label>
+            <input class="field-input" id="fullName" type="text" placeholder="Adınız Soyadınız">
+            <label class="field-label" for="workEmail">E-posta</label>
+            <input class="field-input" id="workEmail" type="email" placeholder="ornek@eposta.com">
+            <label class="field-label" for="interestField">İlgilendiğiniz Program <span style="font-weight:400;color:var(--ink-soft);">(opsiyonel)</span></label>
+            <input class="field-input" id="interestField" type="text" placeholder="Vize Bulucu'yu kullanarak otomatik doldurabilirsiniz">
+            <div class="field-error" id="formError">Bir gün, bir saat seçip geçerli bir e-posta gir.</div>
+            <button class="btn btn-dark btn-block" id="requestDemoBtn">Randevu Talep Et<span class="arrow">→</span></button>
+          </div>
+          <div class="demo-success" id="demoSuccess">
+            <div class="check">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6L20 6" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Randevun Alındı</h3>
+            <p id="successBody"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="minimal-footer">
+  <a href="#top" class="footer-logo"><img src="logo.png" alt="Girişimci Vizesi logosu"></a>
+  <span>© 2026 Girişimci Vizesi. Tüm hakları saklıdır.</span>
+  <div class="footer-links"><a href="#visalar">Vizeler</a><a href="#faq">SSS</a><a href="gorusme.html">Görüşme Planla</a></div>
+</footer>
+
+<script>
+/* ---------- mobile nav ---------- */
+document.getElementById('burgerBtn').addEventListener('click', function(){
+  const links = document.querySelector('.nav-links');
+  const open = links.style.display === 'flex';
+  links.style.display = open ? 'none' : 'flex';
+  links.style.cssText += open ? '' : 'position:fixed;top:80px;left:16px;right:16px;background:linear-gradient(120deg,var(--blue),var(--blue-dark));border-radius:20px;flex-direction:column;align-items:stretch;padding:14px 20px;box-shadow:0 20px 40px -18px rgba(21,55,159,.5);gap:4px;';
+  this.classList.toggle('open', !open);
+});
+
+/* ---------- girişimci vizesi 3x3 kartları — ülkeye özgü renk, kategori etiketi, ikonlu istatistik ---------- */
+/* ---------- gerçek SVG bayraklar (emoji bayraklar Windows'ta düzgün görünmüyor) ---------- */
+const FLAG_SVG = {
+  slovakia: `<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="6.67" y="0" fill="#fff"/><rect width="30" height="6.67" y="6.67" fill="#0b4ea2"/><rect width="30" height="6.67" y="13.33" fill="#ee1c25"/></svg>`,
+  belgium: `<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="10" height="20" x="0" fill="#000"/><rect width="10" height="20" x="10" fill="#fdda24"/><rect width="10" height="20" x="20" fill="#ef3340"/></svg>`,
+  finland: `<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="20" fill="#fff"/><rect x="9" width="4" height="20" fill="#002f6c"/><rect y="8" width="30" height="4" fill="#002f6c"/></svg>`,
+  portugal: `<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="12" height="20" fill="#046a38"/><rect x="12" width="18" height="20" fill="#da291c"/><circle cx="12" cy="10" r="3.2" fill="#ffcc00" stroke="#046a38" stroke-width="0.4"/></svg>`,
+  sweden: `<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="20" fill="#006aa7"/><rect x="9" width="4" height="20" fill="#fecc02"/><rect y="8" width="30" height="4" fill="#fecc02"/></svg>`,
+  usa: `<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="20" fill="#fff"/><rect y="0" width="30" height="1.54" fill="#B22234"/><rect y="3.08" width="30" height="1.54" fill="#B22234"/><rect y="6.16" width="30" height="1.54" fill="#B22234"/><rect y="9.24" width="30" height="1.54" fill="#B22234"/><rect y="12.32" width="30" height="1.54" fill="#B22234"/><rect y="15.4" width="30" height="1.54" fill="#B22234"/><rect y="18.48" width="30" height="1.54" fill="#B22234"/><rect width="12" height="11" fill="#3C3B6E"/></svg>`,
+  uk: `<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="20" fill="#012169"/><path d="M0,0 L30,20 M30,0 L0,20" stroke="#fff" stroke-width="4"/><path d="M0,0 L30,20 M30,0 L0,20" stroke="#C8102E" stroke-width="1.6"/><rect x="12" width="6" height="20" fill="#fff"/><rect y="7" width="30" height="6" fill="#fff"/><rect x="13.2" width="3.6" height="20" fill="#C8102E"/><rect y="8.2" width="30" height="3.6" fill="#C8102E"/></svg>`,
+  estonia: `<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="6.67" y="0" fill="#0072ce"/><rect width="30" height="6.67" y="6.67" fill="#000"/><rect width="30" height="6.67" y="13.33" fill="#fff"/></svg>`,
+};
+function flagSVG(key){
+  if(key === 'eb2niw' || key === 'goldcard') return FLAG_SVG.usa;
+  return FLAG_SVG[key] || '';
+}
+
+const visas = [
+  {
+    key:'slovakia',
+    flag:'🇸🇰', country:'Slovakya', name:'Girişimci Vizesi',
+    bar:'linear-gradient(90deg,#0B4EA2,#EE1C25)',
+    accent:'#0B4EA2', accentBg:'#E7EEFA',
+    tagline:'AB pazarına düşük yatırımla hızlı giriş',
+    benefit:'Mülakatsız başvuru süreciyle Avrupa Birliği pazarına altı ayda adım at; oturum tüm aileni kapsar.',
+    tags:['Mülakatsız','AB Erişimi','Aile Dahil'],
+    gecerlilik:'3 Yıl', kapsam:'Tüm Aile', mulakat:'Yok', surec:'6 Ay'
+  },
+  {
+    key:'belgium',
+    flag:'🇧🇪', country:'Belçika', name:'Profesyonel Kart',
+    bar:'linear-gradient(90deg,#000000,#FDDA24 50%,#EF3340)',
+    accent:'#B8860B', accentBg:'#FBF1DC',
+    tagline:'Avrupa\'nın kalbinde bağımsız çalışma hakkı',
+    benefit:'Belçika\'da kendi işini bağımsız yürütme iznini al, Schengen alanında serbest dolaşımın kapısını aç.',
+    tags:['Mülakatsız','Schengen','Aile Dahil'],
+    gecerlilik:'2 Yıl', kapsam:'Tüm Aile', mulakat:'Yok', surec:'6 Ay'
+  },
+  {
+    key:'finland',
+    flag:'🇫🇮', country:'Finlandiya', name:'Girişimci Vizesi',
+    bar:'linear-gradient(90deg,#002F6C,#FFFFFF 50%,#002F6C)',
+    accent:'#002F6C', accentBg:'#E6ECF5',
+    tagline:'İskandinav yaşam kalitesiyle girişimcilik',
+    benefit:'Güçlü bir iş planıyla başvur, mülakat sürecini geç, Kuzey Avrupa\'nın en yüksek yaşam standardına taşın.',
+    tags:['Mülakat Var','Yüksek Yaşam Standardı','Aile Dahil'],
+    gecerlilik:'2 Yıl', kapsam:'Tüm Aile', mulakat:'Var', surec:'6 Ay'
+  },
+  {
+    key:'portugal',
+    flag:'🇵🇹', country:'Portekiz', name:'D2 Girişimci Vizesi',
+    bar:'linear-gradient(90deg,#046A38,#DA291C)',
+    accent:'#046A38', accentBg:'#E4F3EA',
+    tagline:'AB\'de kalıcı oturuma en kısa yol',
+    benefit:'Küçük ölçekli bir iş kurarak Portekiz\'de oturum al; yıllar içinde vatandaşlığa başvurma hakkı kazan.',
+    tags:['Mülakatsız','Vatandaşlığa Yol','Aile Dahil'],
+    gecerlilik:'2 Yıl', kapsam:'Tüm Aile', mulakat:'Yok', surec:'6 Ay'
+  },
+  {
+    key:'sweden',
+    flag:'🇸🇪', country:'İsveç', name:'Girişimci Vizesi',
+    bar:'linear-gradient(90deg,#006AA7,#FECC02)',
+    accent:'#006AA7', accentBg:'#E4F0F8',
+    tagline:'Kuzey Avrupa\'da serbest meslek oturumu',
+    benefit:'Kendi işini kurarak İsveç\'te oturum izni al; mülakatsız ve tüm aileni kapsayan bir süreçle taşın.',
+    tags:['Mülakatsız','Serbest Meslek','Aile Dahil'],
+    gecerlilik:'2 Yıl', kapsam:'Tüm Aile', mulakat:'Yok', surec:'6 Ay'
+  },
+  {
+    key:'eb2niw',
+    flag:'🇺🇸', country:'Amerika', name:'EB-2 NIW Vizesi',
+    bar:'linear-gradient(90deg,#B22234,#FFFFFF 50%,#3C3B6E)',
+    accent:'#3C3B6E', accentBg:'#E9E9F2',
+    tagline:'Sponsorsuz, süresiz Amerikan Green Card\'ı',
+    benefit:'İş sponsoru olmadan, kendi yetkinliğini kanıtlayarak süresiz oturum ve çalışma hakkı kazan.',
+    tags:['Sponsorsuz','Süresiz Oturum','Mülakat Var'],
+    gecerlilik:'Süresiz', kapsam:'Tüm Aile', mulakat:'Var', surec:'12 Ay'
+  },
+  {
+    key:'goldcard',
+    flag:'🇺🇸', country:'Amerika', name:'Trump Gold Card',
+    bar:'linear-gradient(90deg,#8A6D1D,#D9A441 50%,#8A6D1D)',
+    accent:'#8A6D1D', accentBg:'#FBF1DC',
+    tagline:'Yatırımla doğrudan Amerikan oturumu',
+    benefit:'Doğrudan yatırım yoluyla mülakatsız ve süresiz Amerika oturum hakkına hızlıca eriş.',
+    tags:['Mülakatsız','Süresiz Oturum','Yatırımcı Programı'],
+    gecerlilik:'Süresiz', kapsam:'Tüm Aile', mulakat:'Yok', surec:'6 Ay'
+  },
+  {
+    key:'uk',
+    flag:'🇬🇧', country:'İngiltere', name:'Skilled Worker',
+    bar:'linear-gradient(90deg,#012169,#FFFFFF 50%,#C8102E)',
+    accent:'#012169', accentBg:'#E6EAF4',
+    tagline:'Birleşik Krallık\'ta kariyer ve oturum',
+    benefit:'Onaylı bir iş teklifiyle beş yıl geçerli oturum al; süreç sonunda daimi ikamete başvurma hakkı kazan.',
+    tags:['Mülakatsız','Kariyer Odaklı','Aile Dahil'],
+    gecerlilik:'5 Yıl', kapsam:'Tüm Aile', mulakat:'Yok', surec:'6 Ay'
+  },
+  {
+    key:'estonia',
+    flag:'🇪🇪', country:'Estonya', name:'Startup Vizesi',
+    bar:'linear-gradient(90deg,#0072CE,#000000 50%,#FFFFFF)',
+    accent:'#0072CE', accentBg:'#E4EEFA',
+    tagline:'AB\'nin dijital girişimci kapısı',
+    benefit:'Yenilikçi girişimini Estonya\'nın dijital ekosisteminde kur; hızlı ve mülakatsız bir süreçle oturum al.',
+    tags:['Mülakatsız','Hızlı Süreç','Dijital Ekosistem'],
+    gecerlilik:'18 Ay', kapsam:'Tüm Aile', mulakat:'Yok', surec:'4 Ay'
+  },
+];
+
+document.getElementById('visaGrid').innerHTML = visas.map(v => `
+  <div class="visa-card">
+    <div class="visa-flagbar" style="background:${v.bar};"></div>
+    <div class="visa-body">
+      <div class="visa-head">
+        <div class="visa-flag">${flagSVG(v.key)}</div>
+        <div class="visa-titles">
+          <div class="visa-country">${v.country}</div>
+          <h3>${v.name}</h3>
+        </div>
+      </div>
+      <div class="visa-tagline" style="color:${v.accent};">${v.tagline}</div>
+      <p class="visa-benefit">${v.benefit}</p>
+      <div class="visa-tags">
+        ${v.tags.map(t => `<span class="visa-tag" style="background:${v.accentBg};color:${v.accent};">${t}</span>`).join('')}
+      </div>
+      <div class="visa-stats">
+        <div class="visa-stat"><div class="icon">📅</div><div><div class="k">Geçerlilik</div><div class="v">${v.gecerlilik}</div></div></div>
+        <div class="visa-stat"><div class="icon">👪</div><div><div class="k">Kapsam</div><div class="v">${v.kapsam}</div></div></div>
+        <div class="visa-stat"><div class="icon">🎤</div><div><div class="k">Mülakat</div><div class="v">${v.mulakat}</div></div></div>
+        <div class="visa-stat"><div class="icon">⏱️</div><div><div class="k">Süreç</div><div class="v">${v.surec}</div></div></div>
+      </div>
+      <div class="visa-actions">
+        <a href="#faq" class="btn btn-ghost">Bilgi Al</a>
+        <a href="gorusme.html" class="btn btn-primary" style="background:${v.accent};">Teklif Al</a>
+      </div>
+    </div>
+  </div>
+`).join('');
+
+/* ---------- Vize Bulucu — bağlı düğümlerden oluşan flow canvas ---------- */
+const finderTree = {
+  start: {
+    label:'1. Adım', q:'Yurt dışına yerleşim hedefiniz nedir?',
+    options:[
+      {emoji:'💰', text:'Yatırım yaparak oturum hakkı elde etmek', next:'invest'},
+      {emoji:'🚀', text:'Kendi işletmemi / girişimimi kurmak', next:'startup'},
+      {emoji:'💼', text:'Bir iş teklifi doğrultusunda yerleşmek', result:'uk'},
+      {emoji:'⚡', text:'Süreci mümkün olan en kısa sürede tamamlamak', next:'speed'},
+    ]
+  },
+  invest: {
+    label:'2. Adım', q:'Mülakat süreci tarafınız için bir sorun teşkil ediyor mu?',
+    options:[
+      {emoji:'🙅', text:'Hayır, mülakatsız bir süreç tercih ediyorum', result:'goldcard'},
+      {emoji:'🎤', text:'Hayır, mülakat süreci tarafım için sorun değil', result:'eb2niw'},
+    ]
+  },
+  speed: {
+    label:'2. Adım', q:'Avrupa Birliği sınırları içinde bir program mı, yoksa fark etmiyor mu?',
+    options:[
+      {emoji:'🇪🇺', text:'Evet, AB içindeki en hızlı program tercihimdir', result:'estonia'},
+      {emoji:'🌎', text:'Fark etmiyor, en hızlı ve mülakatsız program hangisiyse', result:'goldcard'},
+    ]
+  },
+  startup: {
+    label:'2. Adım', q:'Girişimcilik sürecinde sizin için en belirleyici unsur nedir?',
+    options:[
+      {emoji:'🏛️', text:'AB vatandaşlığına giden bir süreç', result:'portugal'},
+      {emoji:'🧑‍💻', text:'Bağımsız / serbest meslek çalışma esnekliği', next:'startup_flex'},
+      {emoji:'🎯', text:'Güçlü bir iş planıyla en uygun programı seçmek', result:'finland'},
+      {emoji:'🏃', text:'Sade ve hızlı bir başvuru süreci', result:'slovakia'},
+    ]
+  },
+  startup_flex: {
+    label:'3. Adım', q:'Hangi bölgede yer almayı tercih edersiniz?',
+    options:[
+      {emoji:'🇸🇪', text:'Kuzey Avrupa (İskandinavya)', result:'sweden'},
+      {emoji:'🇧🇪', text:'Avrupa\'nın merkezi (Benelüks)', result:'belgium'},
+    ]
+  },
+};
+
+const flowCanvas = document.getElementById('flowCanvas');
+const flowTrack = document.getElementById('flowTrack');
+const flowSvg = document.getElementById('flowSvg');
+const flowCols = document.getElementById('flowCols');
+const finderResetBtn = document.getElementById('finderResetBtn');
+
+// columns[0] her zaman kök düğümdür. Sonraki her sütun ya bir soru (options) ya da sonuç (result) düğümüdür.
+let columns = [{type:'root'}];
+
+function nodeHTML(o, idx, colIndex, chosenIndex){
+  const state = chosenIndex === null ? '' : (chosenIndex === idx ? 'chosen' : 'dimmed');
+  return `
+    <div class="flow-node ${state}" data-col="${colIndex}" data-idx="${idx}">
+      <span class="fn-dot left"></span>
+      <div class="fn-thumb">${o.emoji}</div>
+      <div class="fn-foot">${o.text}</div>
+      <span class="fn-dot right"></span>
+    </div>
+  `;
+}
+
+function resultNodeHTML(best, colIndex){
+  return `
+    <div class="flow-node result-node" data-col="${colIndex}" data-idx="0">
+      <span class="fn-dot left"></span>
+      <div class="fn-thumb"><div class="flag-badge">${flagSVG(best.key)}</div></div>
+      <div class="fn-tag">Değerlendirme Sonucu</div>
+      <div class="fn-country">${best.country}</div>
+      <div class="fn-name">${best.name}</div>
+      <div class="fn-tags">${best.tags.map(t => `<span class="visa-tag" style="background:${best.accentBg};color:${best.accent};">${t}</span>`).join('')}</div>
+      <div class="fn-cta">
+        <button type="button" class="btn btn-primary btn-sm" id="finderDiscussBtn">Uzmanla Görüşün<span class="arrow">→</span></button>
+      </div>
+    </div>
+  `;
+}
+
+function renderCanvas(){
+  finderResetBtn.classList.toggle('visible', columns.length > 1);
+
+  flowCols.innerHTML = columns.map((col, colIndex) => {
+    if(col.type === 'root'){
+      return `
+        <div class="flow-col" data-col="0">
+          <div class="flow-root" id="flowRootBtn">🧭<span class="fn-dot right"></span></div>
+          <div class="flow-root-label">${columns.length === 1 ? 'Başlayın' : 'Vize Bulucu'}</div>
+        </div>
+      `;
+    }
+    if(col.type === 'result'){
+      const best = visas.find(v => v.key === col.resultKey) || visas[0];
+      return `
+        <div class="flow-col" data-col="${colIndex}">
+          <div class="flow-col-nodes">${resultNodeHTML(best, colIndex)}</div>
+        </div>
+      `;
+    }
+    // options column
+    return `
+      <div class="flow-col" data-col="${colIndex}">
+        <div class="flow-col-label">${col.q}</div>
+        <div class="flow-col-nodes">
+          ${col.options.map((o,i) => nodeHTML(o, i, colIndex, col.chosenIndex)).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // tıklama olayları
+  document.getElementById('flowRootBtn').addEventListener('click', () => {
+    if(columns.length === 1){ startFlow(); }
+    else { resetFlow(); }
+  });
+
+  columns.forEach((col, colIndex) => {
+    if(col.type !== 'options') return;
+    flowCols.querySelectorAll(`.flow-col[data-col="${colIndex}"] .flow-node`).forEach(el => {
+      el.addEventListener('click', () => {
+        const idx = parseInt(el.dataset.idx, 10);
+        selectOption(colIndex, idx);
+      });
+    });
+  });
+
+  const discussBtn = document.getElementById('finderDiscussBtn');
+  if(discussBtn){
+    discussBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const lastCol = columns[columns.length - 1];
+      const best = visas.find(v => v.key === lastCol.resultKey) || visas[0];
+      const interestField = document.getElementById('interestField');
+      if(interestField) interestField.value = `${best.country} — ${best.name}`;
+      document.getElementById('demo').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  }
+
+  requestAnimationFrame(() => {
+    drawConnectors();
+    flowCanvas.scrollTo({left: flowCanvas.scrollWidth, behavior:'smooth'});
+  });
+}
+
+function startFlow(){
+  columns = [{type:'root'}, {type:'options', q:finderTree.start.q, options:finderTree.start.options, chosenIndex:null}];
+  renderCanvas();
+}
+
+function resetFlow(){
+  columns = [{type:'root'}];
+  renderCanvas();
+}
+
+function selectOption(colIndex, optIndex){
+  const col = columns[colIndex];
+  col.chosenIndex = optIndex;
+  columns = columns.slice(0, colIndex + 1);
+  const opt = col.options[optIndex];
+  if(opt.result){
+    columns.push({type:'result', resultKey:opt.result});
+  } else {
+    const nextNode = finderTree[opt.next];
+    columns.push({type:'options', q:nextNode.q, options:nextNode.options, chosenIndex:null});
+  }
+  renderCanvas();
+}
+
+function drawCurve(fromEl, toEl, emphasize){
+  if(!fromEl || !toEl) return;
+  const trackRect = flowTrack.getBoundingClientRect();
+  const r1 = fromEl.getBoundingClientRect();
+  const r2 = toEl.getBoundingClientRect();
+  const x1 = r1.left + r1.width/2 - trackRect.left;
+  const y1 = r1.top + r1.height/2 - trackRect.top;
+  const x2 = r2.left + r2.width/2 - trackRect.left;
+  const y2 = r2.top + r2.height/2 - trackRect.top;
+  const dx = Math.max(36, (x2 - x1) / 2);
+  const d = `M ${x1} ${y1} C ${x1+dx} ${y1}, ${x2-dx} ${y2}, ${x2} ${y2}`;
+  const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+  path.setAttribute('d', d);
+  path.setAttribute('fill','none');
+  path.setAttribute('stroke','#1E4FD8');
+  path.setAttribute('stroke-width', emphasize ? '2.2' : '1.6');
+  path.setAttribute('opacity', emphasize ? '0.55' : '0.16');
+  path.setAttribute('stroke-linecap','round');
+  flowSvg.appendChild(path);
+  const len = path.getTotalLength();
+  path.style.strokeDasharray = len;
+  path.style.strokeDashoffset = len;
+  requestAnimationFrame(() => {
+    path.style.transition = 'stroke-dashoffset .5s ease';
+    path.style.strokeDashoffset = '0';
+  });
+}
+
+function drawConnectors(){
+  flowSvg.innerHTML = '';
+  flowSvg.setAttribute('width', flowTrack.scrollWidth);
+  flowSvg.setAttribute('height', flowTrack.scrollHeight);
+
+  for(let i = 1; i < columns.length; i++){
+    const parentCol = columns[i - 1];
+    let parentDot;
+    if(parentCol.type === 'root'){
+      parentDot = document.querySelector('.flow-root .fn-dot.right');
+    } else {
+      const chosenEl = flowCols.querySelectorAll(`.flow-col[data-col="${i-1}"] .flow-node`)[parentCol.chosenIndex];
+      parentDot = chosenEl ? chosenEl.querySelector('.fn-dot.right') : null;
+    }
+    if(!parentDot) continue;
+
+    const col = columns[i];
+    if(col.type === 'result'){
+      const resultEl = flowCols.querySelector(`.flow-col[data-col="${i}"] .flow-node`);
+      drawCurve(parentDot, resultEl.querySelector('.fn-dot.left'), true);
+    } else {
+      const nodeEls = flowCols.querySelectorAll(`.flow-col[data-col="${i}"] .flow-node`);
+      nodeEls.forEach((nodeEl, idx) => {
+        const emphasize = col.chosenIndex === null || col.chosenIndex === idx;
+        drawCurve(parentDot, nodeEl.querySelector('.fn-dot.left'), emphasize);
+      });
+    }
+  }
+}
+
+finderResetBtn.addEventListener('click', resetFlow);
+renderCanvas();
+
+window.addEventListener('resize', () => { requestAnimationFrame(drawConnectors); });
+
+/* ---------- FAQ accordion ---------- */
+const faqs = [
+  {q:'Girişimci Vizesi nedir?', a:'Girişimci vizesi, bir ülkeye yenilikçi bir iş kurmak veya mevcut bir işletmeye yatırım yaparak ekonomik katkı sağlamak isteyen girişimcilere verilen oturum iznidir. Genellikle iş planı, yeterli sermaye ve işletmenin ülke ekonomisine değer katacağını gösteren belgelerle başvurulur.'},
+  {q:'Girişimci Vizesi nasıl alınır?', a:'Öncelikle başvurulacak ülkenin şartlarına uygun bir iş planı hazırlanır ve gerekli sermaye veya yatırım kapasitesi belgelenir. Ardından iş planı, finansal belgeler ve kimlik evraklarıyla birlikte ilgili konsolosluk veya göçmenlik makamına başvuru yapılır. Başvuru onaylandığında girişimci vizesi veya buna bağlı oturum izni alınarak iş kurma süreci başlatılır.'},
+  {q:'Girişimci Vizesi hangi ülkelerden alınır?', a:'Başta Birleşik Krallık, Amerika, Finlandiya, Portekiz gibi ülkeler tarafından sunulmaktadır. Ayrıca Estonya, İsveç, Belçika ve Slovakya gibi diğer Avrupa Birliği ülkelerinde de girişimcilere özel programlar bulunmaktadır. Her ülkenin yatırım tutarı, iş planı, inovasyon kriterleri ve oturum şartları farklılık gösterir.'},
+];
+document.getElementById('faqList').innerHTML = faqs.map((f,i) => `
+  <div class="faq-item ${i===0?'open':''}">
+    <button class="faq-q" data-i="${i}">${f.q}<span class="plus">+</span></button>
+    <div class="faq-a"><p>${f.a}</p></div>
+  </div>
+`).join('');
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const body = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+    if(!isOpen){ item.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
+  });
+});
+// open first faq body height on load
+window.addEventListener('load', () => {
+  const first = document.querySelector('.faq-item.open .faq-a');
+  if(first) first.style.maxHeight = first.scrollHeight + 'px';
+});
+
+/* ---------- sticky step tabs + scrollspy ---------- */
+const tabs = Array.from(document.querySelectorAll('.step-tab'));
+const panels = Array.from(document.querySelectorAll('.step-panel'));
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.getElementById(tab.dataset.target).scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      tabs.forEach(t => t.classList.remove('active'));
+      const activeTab = tabs.find(t => t.dataset.target === entry.target.id);
+      if(activeTab) activeTab.classList.add('active');
+    }
+  });
+}, {rootMargin:'-40% 0px -50% 0px', threshold:0});
+panels.forEach(p => spy.observe(p));
+
+/* ---------- randevu / booking interactivity ---------- */
+const days = ['Pzt 10','Sal 11','Çar 12','Per 13'];
+const times = ['09:30','11:00','14:00','16:30'];
+const dayGrid = document.getElementById('dayGrid');
+const timeGrid = document.getElementById('timeGrid');
+let selectedDay = days[0], selectedTime = times[1];
+
+function renderPicks(){
+  dayGrid.innerHTML = days.map(d => `<button type="button" class="pick-btn ${d===selectedDay?'active':''}" data-day="${d}">${d}</button>`).join('');
+  timeGrid.innerHTML = times.map(t => `<button type="button" class="pick-btn ${t===selectedTime?'active':''}" data-time="${t}">${t}</button>`).join('');
+  dayGrid.querySelectorAll('.pick-btn').forEach(btn => btn.addEventListener('click', () => { selectedDay = btn.dataset.day; renderPicks(); }));
+  timeGrid.querySelectorAll('.pick-btn').forEach(btn => btn.addEventListener('click', () => { selectedTime = btn.dataset.time; renderPicks(); }));
+}
+renderPicks();
+
+const emailInput = document.getElementById('workEmail');
+const nameInput = document.getElementById('fullName');
+const formError = document.getElementById('formError');
+function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+document.getElementById('requestDemoBtn').addEventListener('click', () => {
+  const email = emailInput.value.trim();
+  const name = nameInput.value.trim();
+  const interest = document.getElementById('interestField').value.trim();
+  if(!selectedDay || !selectedTime || !isValidEmail(email) || !name){
+    formError.style.display = 'block';
+    return;
+  }
+  formError.style.display = 'none';
+  document.getElementById('bookingForm').style.display = 'none';
+  document.getElementById('demoSuccess').style.display = 'block';
+  document.getElementById('successBody').textContent = interest
+    ? `${name}, ${selectedDay} günü saat ${selectedTime} için "${interest}" programını konuşmak üzere randevunu aldık. Onay ve detaylar ${email} adresine gönderilecek.`
+    : `${name}, ${selectedDay} günü saat ${selectedTime} için randevunu aldık. Onay ve detaylar ${email} adresine gönderilecek.`;
+});
+</script>
+
+</body>
+</html>

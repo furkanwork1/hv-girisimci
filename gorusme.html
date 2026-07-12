@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ücretsiz Danışmanlık Görüşmesi Planlayın | Girişimci Vizesi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFFFF;
+    --cream-2:#F4F5F8;
+    --panel:#FFFFFF;
+    --ink:#141B2E;
+    --ink-soft:#6A6E7C;
+    --line:rgba(20,27,46,0.12);
+    --blue:#1E4FD8;
+    --blue-dark:#15379F;
+    --gold:#D9A441;
+    --coral:#D64550;
+    --teal:#12907A;
+    --lavender:#8C7AE6;
+    --green:#1D9C68;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:12px;
+    --shadow-soft:0 20px 45px -25px rgba(20,27,46,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-0.02em;margin:0;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);font-weight:500;display:inline-flex;align-items:center;gap:8px;}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue);display:inline-block;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  button{font-family:inherit;cursor:pointer;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;letter-spacing:.01em;border:1.5px solid transparent;transition:background-color .18s ease, color .18s ease, border-color .18s ease, opacity .18s ease;white-space:nowrap;}
+  .btn .arrow{display:inline-block;transition:transform .18s ease;font-size:14px;}
+  .btn:hover .arrow{transform:translateX(3px);}
+  .btn-primary{background:var(--blue);color:#fff;}
+  .btn-primary:hover{background:var(--blue-dark);}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+  .btn-ghost:hover{background:var(--cream-2);border-color:var(--ink);}
+  .btn-dark{background:var(--ink);color:#fff;}
+  .btn-dark:hover{background:#000;}
+  .btn-sm{padding:9px 17px;font-size:13px;}
+  .btn-block{width:100%;}
+  .btn[disabled]{opacity:.4;cursor:not-allowed;}
+  .btn-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1.5px solid var(--line);background:transparent;color:var(--ink-soft);flex-shrink:0;}
+  .btn-icon:hover{border-color:var(--ink);color:var(--ink);background:var(--cream-2);}
+  .btn-icon[disabled]:hover{border-color:var(--line);color:var(--ink-soft);background:transparent;}
+
+  /* ---------- header (site ile birebir aynı) ---------- */
+  header{position:fixed;top:16px;left:16px;right:16px;z-index:50;background:linear-gradient(120deg,var(--blue),var(--blue-dark));border-radius:24px;overflow:hidden;box-shadow:0 20px 40px -18px rgba(21,55,159,0.5);}
+  header .hdr-decor{position:absolute;z-index:0;pointer-events:none;}
+  nav{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;}
+  .logo{display:flex;align-items:center;gap:9px;font-family:'Space Grotesk';font-weight:700;font-size:18.5px;color:#fff;}
+  .logo .mark{width:32px;height:32px;flex-shrink:0;}
+  .nav-links{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:rgba(255,255,255,.82);}
+  .nav-links a{display:flex;align-items:center;gap:7px;padding:9px 13px;border-radius:999px;transition:background-color .18s ease, color .18s ease;}
+  .nav-links a svg{width:16px;height:16px;flex-shrink:0;opacity:.9;}
+  .nav-links a:hover{color:#fff;background:rgba(255,255,255,.14);}
+  .nav-right{display:flex;align-items:center;gap:10px;}
+  header .btn-icon{border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.9);}
+  header .btn-icon:hover{background:rgba(255,255,255,.16);border-color:#fff;color:#fff;}
+  header .btn-primary{background:#fff;color:var(--blue);}
+  header .btn-primary:hover{background:#F0F1FF;}
+  .nav-burger{display:none;background:none;border:1.5px solid rgba(255,255,255,.35);border-radius:50%;width:40px;height:40px;padding:0;align-items:center;justify-content:center;}
+  .nav-burger span{display:block;width:16px;height:1.6px;background:#fff;margin:2.5px auto;border-radius:2px;transition:transform .2s ease, opacity .2s ease;}
+  .nav-burger.open span:nth-child(1){transform:translateY(4.2px) rotate(45deg);}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-4.2px) rotate(-45deg);}
+
+  /* ---------- sayfa intro ---------- */
+  .page-hero{position:relative;padding:180px 0 60px;overflow:hidden;text-align:center;}
+  .page-hero .hdr-decor{position:absolute;z-index:0;pointer-events:none;}
+  .page-hero-inner{position:relative;z-index:2;max-width:680px;margin:0 auto;}
+  .page-hero h1{font-size:clamp(30px,4.4vw,44px);line-height:1.12;margin-top:16px;}
+  .page-hero h1 .accent{color:var(--blue);}
+  .page-hero p{max-width:540px;margin:18px auto 0;font-size:16px;line-height:1.6;color:var(--ink-soft);}
+  .trust-row{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:34px;}
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--ink-soft);}
+  .trust-item .dot-icon{width:30px;height:30px;border-radius:9px;background:var(--cream-2);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+
+  /* ---------- ana bölüm: sol bilgi + sağ takvim ---------- */
+  .booking-section{padding:50px 0 110px;}
+  .booking-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:36px;align-items:start;}
+
+  .info-card{background:var(--cream-2);border-radius:var(--radius-lg);padding:34px;}
+  .info-card h2{font-size:21px;margin-bottom:20px;line-height:1.3;}
+  .info-list{list-style:none;padding:0;margin:0 0 30px;display:flex;flex-direction:column;gap:16px;}
+  .info-list li{display:flex;gap:14px;align-items:flex-start;}
+  .info-list .ico{width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+  .info-list .txt h4{font-size:14.5px;font-weight:700;margin-bottom:3px;}
+  .info-list .txt p{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0;}
+
+  .consultant{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:16px;margin-bottom:22px;}
+  .consultant .avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--lavender));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:17px;flex-shrink:0;}
+  .consultant .who h4{font-size:14.5px;margin-bottom:2px;}
+  .consultant .who p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .stat-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 12px;text-align:center;}
+  .stat-box .num{font-family:'Space Grotesk';font-size:20px;font-weight:700;color:var(--blue);}
+  .stat-box .lbl{font-size:11px;color:var(--ink-soft);margin-top:2px;font-weight:600;}
+
+  .booking-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);padding:36px;}
+  .booking-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+  .booking-card-head h3{font-size:18px;}
+  .cal-nav{display:flex;align-items:center;gap:10px;}
+  .cal-nav .cal-label{font-size:13.5px;font-weight:700;min-width:120px;text-align:center;}
+
+  .day-grid,.time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .time-grid{margin-top:10px;margin-bottom:24px;}
+  .pick-btn{padding:14px 6px;border-radius:12px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:13.5px;transition:all .18s ease;text-align:center;}
+  .pick-btn .d1{display:block;font-size:11px;color:var(--ink-soft);font-weight:600;margin-bottom:2px;}
+  .pick-btn:hover{border-color:var(--blue);}
+  .pick-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .pick-btn.active .d1{color:rgba(255,255,255,.75);}
+
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .field-label{font-weight:600;font-size:14px;margin-bottom:8px;display:block;}
+  .field-input,.field-select{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);font-family:inherit;font-size:14.5px;margin-bottom:20px;background:var(--cream-2);}
+  .field-select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236A6E7C' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center;background-size:16px;}
+  .field-input:focus,.field-select:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .field-error{font-size:13px;color:var(--coral);margin:-12px 0 16px;display:none;font-weight:600;}
+  .consent{display:flex;gap:9px;align-items:flex-start;margin-bottom:20px;}
+  .consent input{margin-top:3px;flex-shrink:0;}
+  .consent label{font-size:12.5px;color:var(--ink-soft);line-height:1.5;}
+
+  .booking-success{display:none;text-align:center;padding:30px 10px;}
+  .booking-success .check{width:54px;height:54px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+  .booking-success h3{font-family:'Space Grotesk';font-size:21px;margin-bottom:10px;}
+  .booking-success p{color:var(--ink-soft);font-size:14.5px;line-height:1.6;max-width:380px;margin:0 auto;}
+
+  /* ---------- 3 adım şeridi ---------- */
+  .mini-steps{padding:20px 0 90px;}
+  .mini-steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .mini-step{background:var(--cream-2);border-radius:var(--radius-md);padding:24px;}
+  .mini-step .num{font-family:'IBM Plex Mono';font-size:12px;color:var(--blue);font-weight:600;margin-bottom:10px;}
+  .mini-step h4{font-size:16px;margin-bottom:8px;}
+  .mini-step p{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0;}
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:20px 0 100px;background:var(--cream-2);}
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;}
+  .faq-q{width:100%;background:none;border:none;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;text-align:left;}
+  .faq-q .plus{font-family:'Space Grotesk';font-size:20px;color:var(--blue);transition:transform .2s ease;flex-shrink:0;margin-left:14px;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{padding:0 24px 20px;margin:0;font-size:14px;color:var(--ink-soft);line-height:1.6;}
+
+  /* ---------- footer (site ile birebir aynı) ---------- */
+  footer{padding:70px 32px 40px;background:var(--cream-2);}
+  .footer-top{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:40px;border-bottom:1px solid var(--line);}
+  .footer-brand .logo{margin-bottom:14px;color:var(--ink);}
+  .footer-brand p{font-size:14px;color:var(--ink-soft);line-height:1.6;max-width:320px;}
+  .footer-col h4{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:16px;font-weight:600;}
+  .footer-col a{display:block;font-size:14.5px;margin-bottom:12px;color:var(--ink);}
+  .footer-col a:hover{color:var(--blue);}
+  .footer-offices{font-size:13.5px;color:var(--ink-soft);line-height:1.7;margin-top:14px;}
+  .footer-bottom{max-width:1180px;margin:24px auto 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .footer-copy{font-size:13.5px;color:var(--ink-soft);}
+  .social{display:flex;gap:10px;}
+  .social a{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink-soft);transition:all .2s ease;font-size:13px;font-weight:700;}
+  .social a:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+  @media(max-width:900px){
+    .booking-grid{grid-template-columns:1fr;}
+    .mini-steps-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .nav-burger{display:flex;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:560px){
+    .day-grid,.time-grid{grid-template-columns:repeat(2,1fr);}
+    .field-row{grid-template-columns:1fr;}
+    .wrap{padding:0 20px;}
+    .page-hero{padding-top:150px;}
+    .booking-card{padding:24px;}
+    .info-card{padding:24px;}
+    .footer-top{grid-template-columns:1fr;}
+    .trust-row{gap:16px;}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
+  header{background:#fff;border:1px solid rgba(20,27,46,.08);box-shadow:0 16px 38px -24px rgba(20,27,46,.38);overflow:visible;}
+  header .hdr-decor{display:none;}
+  .logo{color:var(--ink);width:110px;height:38px;overflow:hidden;position:relative;flex-shrink:0;}
+  .logo img{position:absolute;width:169px;max-width:none;height:auto;left:-32px;top:-32px;border-radius:0;background:transparent;padding:0;}
+  .nav-links{color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--blue);background:var(--cream-2);}
+  header .btn-icon{border-color:var(--line);color:var(--ink-soft);}
+  header .btn-icon:hover{background:var(--cream-2);border-color:var(--blue);color:var(--blue);}
+  header .btn-primary{background:var(--blue);color:#fff;}
+  header .btn-primary:hover{background:var(--blue-dark);}
+  .nav-burger{border-color:var(--line);}
+  .nav-burger span{background:var(--ink);}
+  footer.minimal-footer{max-width:1180px;margin:0 auto;padding:30px 32px 38px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px;color:var(--ink-soft);font-size:13px;}
+  .minimal-footer .footer-logo{display:block;width:122px;height:48px;overflow:hidden;position:relative;flex-shrink:0;}
+  .minimal-footer .footer-logo img{position:absolute;width:188px;max-width:none;height:auto;left:-35px;top:-33px;}
+  .minimal-footer .footer-links{display:flex;gap:18px;flex-wrap:wrap;}
+  .minimal-footer a:hover{color:var(--blue);}
+  @media(max-width:700px){.logo{width:100px}.logo img{width:154px;left:-29px;top:-29px}footer.minimal-footer{flex-direction:column;text-align:center}.minimal-footer .footer-links{justify-content:center}}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="hdr-decor" style="top:-14px;right:6%;width:52px;opacity:.9;" viewBox="0 0 100 100"><path d="M50 4l46 46-46 46L4 50z" fill="#17AE9E"/></svg>
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Girişimci Vizesi logosu">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#visalar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="8.6" stroke-width="1.6"/><path d="M15.6 8.4l-2.1 5.3-5.3 2.1 2.1-5.3z" fill="currentColor" stroke="none"/></svg>
+        Girişimci Vizeleri
+      </a>
+      <a href="index.html#steps">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h2M4 12h2M4 18h2"/><path d="M9 6h11M9 12h11M9 18h11"/></svg>
+        Nasıl Çalışır
+      </a>
+      <a href="index.html#faq">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="8.6" stroke-width="1.6"/><path d="M9.6 9.6c.3-1.4 1.5-2.2 2.9-2.1 1.5.1 2.5 1.2 2.4 2.5-.1 1.2-1 1.7-1.8 2.2-.6.4-1 .8-1 1.6" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="16.6" r="0.9" fill="currentColor" stroke="none"/></svg>
+        Sık Sorulanlar
+      </a>
+      <a href="#book">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v3.5M16 3v3.5"/></svg>
+        Görüşme Planla
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="https://wa.me/18508808008" class="btn-icon" aria-label="WhatsApp ile ulaş">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 4.5h3.2l1.6 4-2 1.4a9 9 0 004.3 4.3l1.4-2 4 1.6v3.2c0 1-.8 1.5-1.7 1.4C10 17.6 5.9 13.5 5.1 6.7 5 5.8 5.5 5 6.5 4.5z"/></svg>
+      </a>
+      <a href="index.html" class="btn btn-primary btn-sm">Ana Sayfa</a>
+    </div>
+    <button class="nav-burger" aria-label="Menü" id="burgerBtn"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ SAYFA GİRİŞİ ============ -->
+  <section class="page-hero">
+    <svg class="hdr-decor" style="top:60px;left:4%;width:70px;opacity:.14;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="var(--gold)"/></svg>
+    <svg class="hdr-decor" style="bottom:10px;right:5%;width:56px;opacity:.16;" viewBox="0 0 100 100"><path d="M50 4l46 46-46 46L4 50z" fill="var(--lavender)"/></svg>
+    <div class="wrap page-hero-inner">
+      <span class="eyebrow">Ücretsiz Danışmanlık</span>
+      <h1>Girişimci vizesi yolculuğunuzu birlikte <span class="accent">planlayalım</span></h1>
+      <p>30 dakikalık görüşmede size özel vize önerisi, süreç takvimi ve maliyet netliği sunuyoruz — tamamen ücretsiz.</p>
+      <div class="trust-row">
+        <div class="trust-item"><span class="dot-icon">⏱️</span>30 Dakika</div>
+        <div class="trust-item"><span class="dot-icon">💬</span>Türkçe Görüşme</div>
+        <div class="trust-item"><span class="dot-icon">🎯</span>Size Özel Öneri</div>
+        <div class="trust-item"><span class="dot-icon">✅</span>Ücretsiz &amp; Taahhütsüz</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BİLGİ + TAKVİM ============ -->
+  <section class="booking-section" id="book">
+    <div class="wrap">
+      <div class="booking-grid">
+
+        <!-- SOL: bilgi -->
+        <div>
+          <div class="info-card">
+            <h2>Görüşmede neler konuşacağız?</h2>
+            <ul class="info-list">
+              <li>
+                <div class="ico">🧭</div>
+                <div class="txt"><h4>Hedefinize uygun ülke ve program seçimi</h4><p>Bütçe, süre ve aile durumunuza göre en uygun girişimci vizesi programlarını birlikte belirleriz.</p></div>
+              </li>
+              <li>
+                <div class="ico">📋</div>
+                <div class="txt"><h4>İş planı ve evrak yol haritası</h4><p>Başvuru için gereken belgeleri ve iş planı beklentilerini adım adım anlatırız.</p></div>
+              </li>
+              <li>
+                <div class="ico">💶</div>
+                <div class="txt"><h4>Fully-loaded maliyet netliği</h4><p>Danışmanlık, resmi harçlar ve tahmini süreç maliyetini net şekilde paylaşırız.</p></div>
+              </li>
+              <li>
+                <div class="ico">📅</div>
+                <div class="txt"><h4>Gerçekçi bir zaman çizelgesi</h4><p>Başvurudan oturum iznine kadar geçecek süreyi program bazında planlarız.</p></div>
+              </li>
+            </ul>
+
+            <div class="consultant">
+              <div class="avatar">EA</div>
+              <div class="who">
+                <h4>Elif Aydın</h4>
+                <p>Kıdemli Vize Danışmanı · Girişimci Vizesi</p>
+              </div>
+            </div>
+
+            <div class="stat-row">
+              <div class="stat-box"><div class="num">500+</div><div class="lbl">TAMAMLANAN BAŞVURU</div></div>
+              <div class="stat-box"><div class="num">9</div><div class="lbl">ÜLKE PROGRAMI</div></div>
+              <div class="stat-box"><div class="num">4.9/5</div><div class="lbl">DANIŞAN MEMNUNİYETİ</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SAĞ: takvim -->
+        <div class="booking-card">
+          <div id="bookingForm">
+            <div class="booking-card-head">
+              <h3>Uygun bir zaman seçin</h3>
+              <div class="cal-nav">
+                <button type="button" class="btn-icon" id="weekPrev" aria-label="Önceki günler">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+                </button>
+                <span class="cal-label" id="calLabel"></span>
+                <button type="button" class="btn-icon" id="weekNext" aria-label="Sonraki günler">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="day-grid" id="dayGrid"></div>
+            <div class="time-grid" id="timeGrid"></div>
+
+            <label class="field-label" for="fullName">Ad Soyad</label>
+            <input class="field-input" id="fullName" type="text" placeholder="Adınız Soyadınız">
+
+            <div class="field-row">
+              <div>
+                <label class="field-label" for="workEmail">E-posta</label>
+                <input class="field-input" id="workEmail" type="email" placeholder="ornek@eposta.com">
+              </div>
+              <div>
+                <label class="field-label" for="phone">Telefon</label>
+                <input class="field-input" id="phone" type="tel" placeholder="05xx xxx xx xx">
+              </div>
+            </div>
+
+            <label class="field-label" for="programSelect">İlgilendiğiniz Program</label>
+            <select class="field-select" id="programSelect">
+              <option value="">Seçiniz (opsiyonel)</option>
+              <option value="Slovakya — Girişimci Vizesi">Slovakya — Girişimci Vizesi</option>
+              <option value="Belçika — Profesyonel Kart">Belçika — Profesyonel Kart</option>
+              <option value="Finlandiya — Girişimci Vizesi">Finlandiya — Girişimci Vizesi</option>
+              <option value="Portekiz — D2 Girişimci Vizesi">Portekiz — D2 Girişimci Vizesi</option>
+              <option value="İsveç — Girişimci Vizesi">İsveç — Girişimci Vizesi</option>
+              <option value="Amerika — EB-2 NIW Vizesi">Amerika — EB-2 NIW Vizesi</option>
+              <option value="Amerika — Trump Gold Card">Amerika — Trump Gold Card</option>
+              <option value="İngiltere — Skilled Worker">İngiltere — Skilled Worker</option>
+              <option value="Estonya — Startup Vizesi">Estonya — Startup Vizesi</option>
+              <option value="Henüz karar vermedim">Henüz karar vermedim</option>
+            </select>
+
+            <div class="consent">
+              <input type="checkbox" id="consentCheck">
+              <label for="consentCheck">Kişisel verilerimin görüşme talebimi değerlendirmek amacıyla işlenmesini kabul ediyorum.</label>
+            </div>
+
+            <div class="field-error" id="formError">Bir gün, bir saat seçip zorunlu alanları doldurun.</div>
+            <button type="button" class="btn btn-dark btn-block" id="requestDemoBtn">Görüşme Talep Et<span class="arrow">→</span></button>
+          </div>
+
+          <div class="booking-success" id="demoSuccess">
+            <div class="check">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6L20 6" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Görüşmeniz Planlandı</h3>
+            <p id="successBody"></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 ADIM ============ -->
+  <section class="mini-steps">
+    <div class="wrap">
+      <div class="mini-steps-grid">
+        <div class="mini-step">
+          <div class="num">01 — Talep Oluştur</div>
+          <h4>Formu doldurun</h4>
+          <p>Uygun gün ve saati seçip birkaç bilgi paylaşmanız yeterli.</p>
+        </div>
+        <div class="mini-step">
+          <div class="num">02 — Görüşün</div>
+          <h4>Uzmanla görüşün</h4>
+          <p>Seçtiğiniz saatte size özel bir danışmanlık görüşmesi yapılır.</p>
+        </div>
+        <div class="mini-step">
+          <div class="num">03 — Süreç Başlasın</div>
+          <h4>Başvurunuzu başlatın</h4>
+          <p>Görüşme sonrası netleşen program ile başvuru sürecine geçilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq">
+    <div class="wrap">
+      <div class="section-head" style="max-width:640px;margin:0 auto 40px;text-align:center;">
+        <span class="eyebrow">Sık Sorulan Sorular</span>
+        <h2 style="font-size:26px;margin-top:14px;">Görüşme hakkında merak edilenler</h2>
+      </div>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="minimal-footer">
+  <a href="index.html" class="footer-logo"><img src="logo.png" alt="Girişimci Vizesi logosu"></a>
+  <span>© 2026 Girişimci Vizesi. Tüm hakları saklıdır.</span>
+  <div class="footer-links"><a href="index.html#visalar">Vizeler</a><a href="index.html#faq">SSS</a><a href="#book">Görüşme Planla</a></div>
+</footer>
+
+<script>
+/* ---------- mobil nav ---------- */
+document.getElementById('burgerBtn').addEventListener('click', function(){
+  const links = document.querySelector('.nav-links');
+  const open = links.style.display === 'flex';
+  links.style.display = open ? 'none' : 'flex';
+  links.style.cssText += open ? '' : 'position:fixed;top:80px;left:16px;right:16px;background:linear-gradient(120deg,var(--blue),var(--blue-dark));border-radius:20px;flex-direction:column;align-items:stretch;padding:14px 20px;box-shadow:0 20px 40px -18px rgba(21,55,159,.5);gap:4px;';
+  this.classList.toggle('open', !open);
+});
+
+/* ---------- FAQ akordeonu ---------- */
+const faqs = [
+  {q:'Görüşme gerçekten ücretsiz mi?', a:'Evet. İlk danışmanlık görüşmesi tamamen ücretsizdir ve herhangi bir taahhüt gerektirmez. Amacımız size en doğru programı netleştirmek.'},
+  {q:'Görüşme ne kadar sürer?', a:'Görüşmeler ortalama 30 dakika sürer. İhtiyaç halinde süre uzatılabilir, siz yönlendirirsiniz.'},
+  {q:'Görüşme hangi platformda yapılıyor?', a:'Tercihinize göre telefon, WhatsApp görüntülü arama veya Zoom üzerinden görüşme sağlanır; randevu onayında size uygun seçenek sorulur.'},
+  {q:'Görüşme sonrasında ne oluyor?', a:'Görüşme sonrası size özel hazırlanmış program önerisi ve fiyat teklifi e-posta ile iletilir; onaylamanız halinde başvuru süreci başlatılır.'},
+  {q:'Randevumu değiştirebilir miyim?', a:'Evet, onay e-postasındaki bağlantı üzerinden veya WhatsApp destek hattımızdan randevunuzu diliyorsanız yeniden planlayabilirsiniz.'},
+];
+document.getElementById('faqList').innerHTML = faqs.map((f,i) => `
+  <div class="faq-item ${i===0?'open':''}">
+    <button class="faq-q" data-i="${i}">${f.q}<span class="plus">+</span></button>
+    <div class="faq-a"><p>${f.a}</p></div>
+  </div>
+`).join('');
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const body = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+    if(!isOpen){ item.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
+  });
+});
+window.addEventListener('load', () => {
+  const first = document.querySelector('.faq-item.open .faq-a');
+  if(first) first.style.maxHeight = first.scrollHeight + 'px';
+});
+
+/* ---------- takvim: haftalık gezinmeli gün/saat seçimi ---------- */
+const DAY_NAMES = ['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'];
+const MONTH_NAMES = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+const times = ['09:30','11:00','14:00','16:30'];
+
+let weekOffset = 0;   // her adımda 4 iş günü ileri/geri
+let selectedDate = null; // {y,m,d,label}
+let selectedTime = times[1];
+
+function getBusinessDays(offsetGroups){
+  // bugünden başlayarak hafta sonlarını atlayan, offsetGroups*4 gün ötesinden 4 iş günü döndürür
+  const days = [];
+  let cursor = new Date();
+  cursor.setDate(cursor.getDate() + 1); // yarından başla
+  let skip = offsetGroups * 4;
+  while(days.length < 4 + skip){
+    const dow = cursor.getDay();
+    if(dow !== 0 && dow !== 6){ days.push(new Date(cursor)); }
+    cursor.setDate(cursor.getDate() + 1);
+  }
+  return days.slice(skip, skip + 4);
+}
+
+function renderCalendar(){
+  const days = getBusinessDays(weekOffset);
+  const dayGrid = document.getElementById('dayGrid');
+  const calLabel = document.getElementById('calLabel');
+
+  if(days.length){
+    const first = days[0], last = days[days.length-1];
+    calLabel.textContent = first.getMonth() === last.getMonth()
+      ? `${MONTH_NAMES[first.getMonth()]} ${first.getFullYear()}`
+      : `${MONTH_NAMES[first.getMonth()]} – ${MONTH_NAMES[last.getMonth()]}`;
+  }
+  document.getElementById('weekPrev').disabled = weekOffset === 0;
+
+  if(!selectedDate){
+    selectedDate = days[0];
+  }
+
+  dayGrid.innerHTML = days.map(d => {
+    const isActive = selectedDate && d.toDateString() === selectedDate.toDateString();
+    return `<button type="button" class="pick-btn ${isActive?'active':''}" data-t="${d.getTime()}"><span class="d1">${DAY_NAMES[d.getDay()]}</span>${d.getDate()}</button>`;
+  }).join('');
+
+  dayGrid.querySelectorAll('.pick-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectedDate = new Date(parseInt(btn.dataset.t, 10));
+      renderCalendar();
+    });
+  });
+
+  const timeGrid = document.getElementById('timeGrid');
+  timeGrid.innerHTML = times.map(t => `<button type="button" class="pick-btn ${t===selectedTime?'active':''}" data-time="${t}">${t}</button>`).join('');
+  timeGrid.querySelectorAll('.pick-btn').forEach(btn => {
+    btn.addEventListener('click', () => { selectedTime = btn.dataset.time; renderCalendar(); });
+  });
+}
+renderCalendar();
+
+document.getElementById('weekPrev').addEventListener('click', () => { if(weekOffset>0){ weekOffset--; selectedDate=null; renderCalendar(); } });
+document.getElementById('weekNext').addEventListener('click', () => { weekOffset++; selectedDate=null; renderCalendar(); });
+
+/* ---------- form gönderimi ---------- */
+function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+document.getElementById('requestDemoBtn').addEventListener('click', () => {
+  const name = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('workEmail').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const program = document.getElementById('programSelect').value;
+  const consent = document.getElementById('consentCheck').checked;
+  const formError = document.getElementById('formError');
+
+  if(!selectedDate || !selectedTime || !name || !isValidEmail(email) || !phone || !consent){
+    formError.style.display = 'block';
+    return;
+  }
+  formError.style.display = 'none';
+
+  const dateLabel = `${selectedDate.getDate()} ${MONTH_NAMES[selectedDate.getMonth()]} ${DAY_NAMES[selectedDate.getDay()]}`;
+  document.getElementById('bookingForm').style.display = 'none';
+  document.getElementById('demoSuccess').style.display = 'block';
+  document.getElementById('successBody').textContent = program
+    ? `${name}, ${dateLabel} günü saat ${selectedTime} için "${program}" programını konuşmak üzere görüşmeniz planlandı. Onay ${email} adresine gönderilecek.`
+    : `${name}, ${dateLabel} günü saat ${selectedTime} için görüşmeniz planlandı. Onay ${email} adresine gönderilecek.`;
+});
+
+/* ---------- ?program= parametresiyle otomatik seçim (finder sonucundan gelinirse) ---------- */
+const params = new URLSearchParams(window.location.search);
+const preselect = params.get('program');
+if(preselect){
+  const select = document.getElementById('programSelect');
+  const match = Array.from(select.options).find(o => o.value.toLowerCase().includes(preselect.toLowerCase()));
+  if(match) select.value = match.value;
+}
+</script>
+
+</body>
+</html>
